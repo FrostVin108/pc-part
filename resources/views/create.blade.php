@@ -4,21 +4,47 @@
 <form method="POST" action="{{ route('pc.store') }}" class="create-position">
     @csrf
     @method('post')
-    <div class="car-year">
-        <div class="car-style">
+    
+        <div cclass="form-group">
             <label for="exampleInputEmail">Masukan Nama Mobo</label><br>
-            <input type="text" placeholder="Nama Mobo" name="mobo">
+            <input class="form-control" type="text" placeholder="Nama Mobo" name="mobo">
         </div>
 
-        <div class="year-style">
+        <div class="form-group">
             <label for="exampleInputEmail">Masukkan Nama Cpu</label><br>
-            <input type="text" placeholder="Input Nomer" name="cpu">
+            <input class="form-control" type="text" placeholder="Masukkan Cpu" name="cpu">
         </div>
-    </div>
 
-        <div class="button-position">
-            <button type="submit" class="btn-submit">Submit</button>
-            <a class="btn-return" href="{{ route('pc.list')}}">Return</a>
+        <div class="form-group">
+            <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
+            <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail">Masukkan Nama gpu</label><br>
+            <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail">Masukkan Berapa Besar Storage HDD</label><br>
+            <input class="form-control" type="text" placeholder="Masukkan HDD" name="hdd">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail">Masukkan Berapa Besar Storage SSD</label><br>
+            <input class="form-control" type="text" placeholder="Masukkan Ssd" name="ssd">
+        </div>
+        
+        <div class="form-group">
+            <label for="exampleInputEmail">Besar Wat PSU</label><br>
+            <input class="form-control" type="text" placeholder="Masukkan Psu" name="psu">
+        </div>
+        
+    
+
+        <divclass="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a class="btn btn-warning" href="{{ route('pc.index')}}">Return</a>
         </div>  
 </form>
 @endsection

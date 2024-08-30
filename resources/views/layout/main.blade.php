@@ -12,6 +12,7 @@
 	  		<div class="card-body" >
 	  			@yield('list')
           @yield('create')
+          @yield('edit')
 	  		</div>
 			</div>
 		</div>

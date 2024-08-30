@@ -18,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SparepartController::class, 'index'])->name('pc.index');
 
 Route::delete('users/{id}', [SparepartController::class, 'delete'])->name('pc.delete');
+
+Route::get('create', [SparepartController::class, 'create'])->name('pc.create');
+
+Route::post('store', [SparepartController::class, 'store'])->name('pc.store');
+
+Route::get('/edit/{id}', [SparepartController::class, 'edit'])->name('pc.edit');
+
+Route::put('/update/{id}', [SparepartController::class, 'update'])->name('pc.update');

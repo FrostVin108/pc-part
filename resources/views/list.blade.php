@@ -2,10 +2,10 @@
 
 @section('list')
 <h3>PC Spec Information</h3>
-        <table class="table table-bordered">
+        <table class="table table-hover">
             <thead>
             <tr>
-                <th scope="col">Pc No</th>
+                <th scope="col">No</th>
                 <th scope="col">Mobo</th>
                 <th scope="col">Cpu</th>
                 <th scope="col">ram</th>
@@ -17,7 +17,7 @@
             </tr>
             </thead>
             <tbody>
-                @forelse ($pc as $key => $pc)
+                @forelse ($sparepart as $key => $pc)
                 
                 <tr>
                     <td>Pc {{ $key +1 }}</td>
@@ -30,10 +30,10 @@
                     <td>{{ $pc->psu }}</td>
                     <td style="height: 40px">
                         <form method="POST" class="action"  onsubmit="return confirm('Apakah Anda Yakin?');" action="{{ route('pc.delete', $pc->id) }}">
-                            {{-- <a href="{{ route('buyer.edit', $pc->id) }}" class="btn-edit">Edit</a> --}}
+                            <a href="{{ route('pc.edit', $pc->id) }}" class="btn btn-primary">Edit</a>
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn-destroy">Delete</button>    
+                            <button type="submit" class="btn btn-danger">Delete</button>    
                         </form>
                     </td>
                 </tr>

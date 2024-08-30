@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\RamController;
 use App\Models\sparepart;
+use App\Models\ramlist;
 use App\Http\Controllers\SparepartController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +28,17 @@ Route::post('store', [SparepartController::class, 'store'])->name('pc.store');
 Route::get('/edit/{id}', [SparepartController::class, 'edit'])->name('pc.edit');
 
 Route::put('/update/{id}', [SparepartController::class, 'update'])->name('pc.update');
+
+
+
+Route::delete('/destroy/{id}', [RamController::class, 'delete'])->name('ram.delete');
+
+Route::get('/ram', [RamController::class, 'index'])->name('ram.index');
+
+Route::get('/ramcreate', [RamController::class, 'create'])->name('ram.create');
+
+Route::post('/ramstore', [RamController::class, 'store'])->name('ram.store');
+
+route::get('/ramedit/{id}', [RamController::class, 'edit'])->name('ram.edit');
+
+route::put('/update/{id', [RamController::class, 'update'])->name('ram.update');

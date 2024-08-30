@@ -13,6 +13,9 @@
 	  			@yield('list')
           @yield('create')
           @yield('edit')
+          @yield('ramlist')
+          @yield('ramcreate')
+          @yield('ramedit')
 	  		</div>
 			</div>
 		</div>

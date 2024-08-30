@@ -18,7 +18,13 @@
 
     <div class="form-group">
         <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
-        <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram" value="{{ old('ram', $sparepart->ram) }}">
+        {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram"> --}}
+        <select name="ram" id="">
+            <option value="{{ old('ram', $sparepart->ram) }}" selected>{{$sparepart->ram}}</option> 
+            @foreach ($rams as $ram )
+                <option value="{{$ram->ram}}">{{$ram->ram}}</option> 
+            @endforeach
+        </select>
     </div>
     
     <div class="form-group">

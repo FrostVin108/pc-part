@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\sparepart;
+use App\Models\ramlist;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -12,10 +13,11 @@ class SparepartController extends Controller
     public function index()
     {
         $sparepart= sparepart::get(); 
+        $rams = ramlist::get();
         
         // dd($buyer);
 
-        return view('list', compact('sparepart'));
+        return view('list', compact('sparepart', 'rams'));
     }
 
     public function delete()
@@ -28,7 +30,8 @@ class SparepartController extends Controller
 
     public function create():view
     {
-        return view('create');
+        $rams = ramlist::get();
+        return view('create', compact('rams'));
     }
 
     public function store(Request $request): RedirectResponse
@@ -60,8 +63,11 @@ class SparepartController extends Controller
     {
         $sparepart = sparepart::findOrFail($id);
 
+        $rams = ramlist::get();
+        // where('id', $sparepart->ram )->firstOrFail();
+        
         //render view with post
-        return view('edit', compact('sparepart'));
+        return view('edit', compact('sparepart', 'rams'));
     }
 
     public function update(Request $request, $id): RedirectResponse

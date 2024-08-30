@@ -2,6 +2,7 @@
 
 @section('list')
 <h3>PC Spec Information</h3>
+<a href="create" class="btn btn-success">Create New Spec</a>
         <table class="table table-hover">
             <thead>
             <tr>

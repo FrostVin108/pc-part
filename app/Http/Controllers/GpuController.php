@@ -21,10 +21,18 @@ class GpuController extends Controller
 
     public function delete()
     {
-        $id = request()->id;
-        $gpus = Gpu::find($id);
-        $gpus->delete();
-        return redirect()->back();
+        try{
+            $id = request()->id;
+            $gpus = Gpu::find($id);
+            $gpus->delete();
+            return redirect()->back();
+        }catch(\Throwable $th ){
+            // dd($th);
+            // Store the error message in the session
+            \Session::flash('error', "Maaf Item Yang Anda Coba Hilangkan Sedang Terpakai Oleh Salah Satu Data Yang Ada");
+            // Redirect back to the previous page
+            return redirect()->back();
+        }
     }
 
     public function create()

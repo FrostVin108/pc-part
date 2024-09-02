@@ -37,4 +37,5 @@
     @endforelse 
     
 </table>
+
 @endsection

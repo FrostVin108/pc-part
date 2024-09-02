@@ -9,8 +9,13 @@
         
             <div class="form-group">
                 <label for="exampleInputEmail">Masukan Banyak gpu</label><br>
-                <input class="form-control" type="text" placeholder="Masukkan banyak gpu" name="gpu" value="{{ old('gpu', $gpus->gpu) }}">
+                <input class="form-control @error('gpu') is-invalid @enderror" type="text" placeholder="Masukkan banyak gpu" name="gpu" value="{{ old('gpu', $gpus->gpu) }}">
             </div>
+            @error('gpu')
+            <div class="alert alert-danger mt-2">
+                Invalid, Input tidak terisi!
+            </div>
+            @enderror
 
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Submit</button>

@@ -9,8 +9,13 @@
         
             <div cclass="form-group">
                 <label for="exampleInputEmail">Masukan Banyak ram</label><br>
-                <input class="form-control" type="text" placeholder="Masukkan banyak ram" name="ram">
+                <input class="form-control @error('ram') is-invalid @enderror" type="text" placeholder="Masukkan banyak ram" name="ram">
             </div>
+            @error('ram')
+            <div class="alert alert-danger mt-2">
+                Invalid, Input tidak terisi!
+            </div>
+            @enderror
 
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Submit</button>

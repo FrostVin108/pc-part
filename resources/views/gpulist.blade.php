@@ -2,7 +2,11 @@
 
 @section('gpulist')
 <a href="gpucreate" class="btn btn-success">Create</a>
-
+@if(session()->has('error'))
+    <div class="alert alert-danger">
+        {{ session()->get('error') }}
+    </div>
+@endif
 <table class="table table-hover">
     <thead>
     <tr>

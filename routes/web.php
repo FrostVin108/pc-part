@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RamController;
+use App\Http\Controllers\GpuController;
 use App\Models\sparepart;
 use App\Models\ramlist;
 use App\Http\Controllers\SparepartController;
@@ -31,7 +32,7 @@ Route::put('/update/{id}', [SparepartController::class, 'update'])->name('pc.upd
 
 
 
-Route::delete('/destroy/{id}', [RamController::class, 'delete'])->name('ram.delete');
+Route::delete('/ramdestroy/{id}', [RamController::class, 'delete'])->name('ram.delete');
 
 Route::get('/ram', [RamController::class, 'index'])->name('ram.index');
 
@@ -41,4 +42,18 @@ Route::post('/ramstore', [RamController::class, 'store'])->name('ram.store');
 
 route::get('/ramedit/{id}', [RamController::class, 'edit'])->name('ram.edit');
 
-route::put('/update/{id', [RamController::class, 'update'])->name('ram.update');
+route::put('/ramupdate/{id', [RamController::class, 'update'])->name('ram.update');
+
+
+
+Route::delete('/gpudestroy/{id}', [GpuController::class, 'delete'])->name('gpu.delete');
+
+Route::get('/gpu', [GpuController::class, 'index'])->name('gpu.index');
+
+Route::get('/gpucreate', [GpuController::class, 'create'])->name('gpu.create');
+
+Route::post('/gpustore', [GpuController::class, 'store'])->name('gpu.store');
+
+route::get('/gpuedit/{id}', [GpuController::class, 'edit'])->name('gpu.edit');
+
+route::put('/gpuupdate/{id', [GpuController::class, 'update'])->name('gpu.update');

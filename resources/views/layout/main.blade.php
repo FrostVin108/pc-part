@@ -13,9 +13,14 @@
 	  			@yield('list')
           @yield('create')
           @yield('edit')
+
           @yield('ramlist')
           @yield('ramcreate')
           @yield('ramedit')
+
+          @yield('gpulist')
+          @yield('gpucreate')
+          @yield('gpuedit')
 	  		</div>
 			</div>
 		</div>

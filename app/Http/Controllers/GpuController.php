@@ -14,7 +14,7 @@ class GpuController extends Controller
     {
         $gpus = Gpu::get(); 
         
-        // dd($rams);
+        // dd($gpus);
 
         return view('gpulist', compact('gpus'));
     }
@@ -42,7 +42,7 @@ class GpuController extends Controller
             'gpu'         => $request->gpu,
         ]);
 
-        return redirect()->route('ram.index');
+        return redirect()->route('gpu.index');
     }
 
     public function edit(string $id):view
@@ -58,7 +58,6 @@ class GpuController extends Controller
         //validate form
         $this->validate($request, [
             'gpu' => 'required',
-
         ]);
 
         //get post by ID

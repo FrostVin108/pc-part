@@ -25,7 +25,7 @@
                     <td>Pc {{ $key +1 }}</td>
                     <td>{{ $pc->mobo }}</td>
                     <td>{{ $pc->cpu }}</td>
-                    <td>{{ $pc->ram }}</td>
+                    <td>{{ $pc->rams->ram }}</td>
                     <td>{{ $pc->gpu->gpu }}</td>
                     <td>{{ $pc->hdd }}</td>
                     <td>{{ $pc->ssd }}</td>

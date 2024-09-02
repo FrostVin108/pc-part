@@ -14,16 +14,20 @@ class SparepartController extends Controller
     public function index()
     {
         $sparepart= sparepart::get(); 
-        $rams = ramlist::get();
+        // $rams = ramlist::get();
         // $gpus =  Gpu::get();
 
         foreach ($sparepart as $part) {
             $part->gpu = Gpu::where('id', $part->gpu_id)->first();
         }
+
+        foreach ($sparepart as $part) {
+            $part->rams = ramlist::where('id', $part->ram_id)->first();
+        }
         
         // dd($gpus);
 
-        return view('list', compact('sparepart', 'rams'));
+        return view('list', compact('sparepart'));
     }
 
     public function delete()
@@ -46,7 +50,7 @@ class SparepartController extends Controller
         $this->validate($request,[
             'mobo' => 'required',
             'cpu' => 'required',
-            'ram' => 'required',
+            'ram_id' => 'required',
             'gpu_id' => 'required',
             'hdd' => 'required_without:ssd',
             'ssd' => 'required_without:hdd',
@@ -57,7 +61,7 @@ class SparepartController extends Controller
         sparepart::create([
             'mobo'         => $request->mobo,
             'cpu'          => $request->cpu,
-            'ram'          => $request->ram,
+            'ram_id'          => $request->ram_id,
             'gpu_id'          => $request->gpu_id,
             'hdd'          => $request->hdd,
             'ssd'          => $request->ssd,
@@ -71,12 +75,14 @@ class SparepartController extends Controller
     {
         $sparepart = sparepart::findOrFail($id);
 
-        $rams = ramlist::get();
-        // where('id', $sparepart->ram )->firstOrFail();
-        
-        $gpus =  Gpu::get();
+        $gpus= Gpu::where('id', $sparepart->gpu_id )->firstOrFail();
+
+        $gpus = Gpu::get(); 
+        // foreach ($sparepart as $part) {
+        //     $part->rams = ramlist::where('id', $part->ram_id)->first();
+        // }
         //render view with post
-        return view('edit', compact('sparepart', 'rams', 'gpus'));
+        return view('edit', compact('sparepart', 'gpus'));
     }
 
     public function update(Request $request, $id): RedirectResponse
@@ -85,7 +91,7 @@ class SparepartController extends Controller
         $this->validate($request, [
             'mobo' => 'required',
             'cpu' => 'required',
-            'ram' => 'required',
+            'ram_id' => 'required',
             'gpu_id' => 'required',
             'hdd' => 'required_without:ssd',
             'ssd' => 'required_without:hdd',
@@ -99,8 +105,8 @@ class SparepartController extends Controller
         $sparepart->update([
             'mobo'         => $request->mobo,
             'cpu'          => $request->cpu,
-            'ram'          => $request->ram,
-            'gpu_id'          => $request->gpu,
+            'ram_id'          => $request->ram_id,
+            'gpu_id'          => $request->gpu_id,
             'hdd'          => $request->hdd,
             'ssd'          => $request->ssd,
             'psu'          => $request->psu,

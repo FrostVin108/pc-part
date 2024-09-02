@@ -16,24 +16,22 @@
         <input class="form-control" type="text" placeholder="Masukkan Cpu" name="cpu" value="{{ old('cpu', $sparepart->cpu) }}">
     </div>
 
-    <div class="form-group">
+    {{-- <div class="form-group">
         <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
-        {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram"> --}}
-        <select name="ram" class="form-control">
+        <select name="ram_id" class="form-control">
             <option value="{{ old('ram', $sparepart->ram) }}" selected>{{$sparepart->ram}}</option> 
             @foreach ($rams as $ram )
                 <option value="{{$ram->ram}}">{{$ram->ram}}</option> 
             @endforeach
         </select>
-    </div>
+    </div> --}}
     
     <div class="form-group">
         <label for="exampleInputEmail">Masukkan Nama gpu</label><br>
-        {{-- <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu" value="{{ old('gpu', $sparepart->gpu) }}"> --}}
-        <select name="gpu" class="form-control">
-            <option value="{{ old('gpu', $sparepart->gpu) }}" selected>{{$sparepart->gpu}}</option> 
+        <select name="gpu_id" class="form-control">
+            <option value="{{ old('gpu_id', $sparepart->gpu_id) }}" selected>{{$sparepart->gpu->gpu}}</option> 
             @foreach ($gpus as $gpu )
-                <option value="{{$gpu->gpu}}">{{$gpu->gpu}}</option> 
+                <option value="{{$gpu->id}}">{{$gpu->gpu}}</option> 
             @endforeach
         </select>
     </div>

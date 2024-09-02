@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('mobo');
             $table->string('cpu');
-            $table->string('ram');
+            $table->unsignedBigInteger('ram_id');
+            $table->foreign('ram_id')->references('id')->on('ramlist');
             $table->unsignedBigInteger('gpu_id');
             $table->foreign('gpu_id')->references('id')->on('gpulist');
             $table->string('hdd');

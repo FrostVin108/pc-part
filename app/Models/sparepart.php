@@ -16,12 +16,17 @@ class sparepart extends Model
     protected $fillable = [
         'mobo',
         'cpu',
-        'ram',  
+        'ram_id',  
         'gpu_id',
         'hdd',
         'ssd',
         'psu',
     ];
+
+    public function ram(): BelongsTo
+    {
+        return $this->belongsTo(ramlist::class, 'ram_id', 'id');
+    }
 
     public function gpu(): BelongsTo
     {

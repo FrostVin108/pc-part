@@ -9,7 +9,7 @@
   <body>
   	<div id="app">
   		<div class="card" style="margin: 30px">
-	  		<div class="card-body" >
+	  		<div class="card-body" style="margin: 5px 60px">
 	  			@yield('list')
           @yield('create')
           @yield('edit')

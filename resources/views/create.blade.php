@@ -18,7 +18,7 @@
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
             {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram"> --}}
-            <select name="ram" id="">
+            <select name="ram" class="form-control">
                 @foreach ($rams as $ram )
                     <option value="{{$ram->ram}}">{{$ram->ram}}</option> 
                 @endforeach
@@ -27,7 +27,12 @@
         
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan Nama gpu</label><br>
-            <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu">
+            {{-- <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu"> --}}
+            <select name="gpu" class="form-control">
+                @foreach ($gpus as $gpu )
+                    <option value="{{$gpu->gpu}}">{{$gpu->gpu}}</option> 
+                @endforeach
+            </select>
         </div>
         
         <div class="form-group">

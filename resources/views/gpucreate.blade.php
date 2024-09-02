@@ -8,7 +8,7 @@
         @method('post')
         
             <div cclass="form-group">
-                <label for="exampleInputEmail">Masukan Banyak gpu</label><br>
+                <label for="exampleInputEmail">Masukan Nama gpu</label><br>
                 <input class="form-control" type="text" placeholder="Masukkan mama gpu" name="gpu">
             </div>
 

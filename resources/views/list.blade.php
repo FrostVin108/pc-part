@@ -26,7 +26,7 @@
                     <td>{{ $pc->mobo }}</td>
                     <td>{{ $pc->cpu }}</td>
                     <td>{{ $pc->ram }}</td>
-                    <td>{{ $pc->gpu }}</td>
+                    <td>{{ $pc->gpu->gpu }}</td>
                     <td>{{ $pc->hdd }}</td>
                     <td>{{ $pc->ssd }}</td>
                     <td>{{ $pc->psu }}</td>

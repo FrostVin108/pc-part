@@ -42,7 +42,7 @@ Route::post('/ramstore', [RamController::class, 'store'])->name('ram.store');
 
 route::get('/ramedit/{id}', [RamController::class, 'edit'])->name('ram.edit');
 
-route::put('/ramupdate/{id', [RamController::class, 'update'])->name('ram.update');
+route::put('/ramupdate/{id}', [RamController::class, 'update'])->name('ram.update');
 
 
 
@@ -56,4 +56,4 @@ Route::post('/gpustore', [GpuController::class, 'store'])->name('gpu.store');
 
 route::get('/gpuedit/{id}', [GpuController::class, 'edit'])->name('gpu.edit');
 
-route::put('/gpuupdate/{id', [GpuController::class, 'update'])->name('gpu.update');
+route::put('/gpuupdate/{id}', [GpuController::class, 'update'])->name('gpu.update');

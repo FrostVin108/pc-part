@@ -57,14 +57,14 @@ class GpuController extends Controller
     {
         //validate form
         $this->validate($request, [
-            'gpu' => 'required',
+            'gpu' => 'required'
         ]);
 
         //get post by ID
         $gpus = Gpu::findOrFail($id);
 
         $gpus->update([
-            'gpu'         => $request->gpu,
+            'gpu'         => $request->gpu
 
         ]);
         //redirect to index

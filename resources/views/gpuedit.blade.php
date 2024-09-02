@@ -3,9 +3,9 @@
 @section('gpuedit')
 <div style="margin-left: 50px; margin-right: 100px;">
 
-    <form method="POST" action="{{ route('gpu.store') }}" class="create-position">
+    <form method="POST" action="{{ route('gpu.update', $gpus->id) }}" class="create-position">
         @csrf
-        @method('post')
+        @method('put')
         
             <div class="form-group">
                 <label for="exampleInputEmail">Masukan Banyak gpu</label><br>

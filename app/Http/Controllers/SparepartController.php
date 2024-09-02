@@ -15,11 +15,15 @@ class SparepartController extends Controller
     {
         $sparepart= sparepart::get(); 
         $rams = ramlist::get();
-        $gpus =  Gpu::get();
+        // $gpus =  Gpu::get();
+
+        foreach ($sparepart as $part) {
+            $part->gpu = Gpu::where('id', $part->gpu_id)->first();
+        }
         
         // dd($gpus);
 
-        return view('list', compact('sparepart', 'rams', 'gpus'));
+        return view('list', compact('sparepart', 'rams'));
     }
 
     public function delete()
@@ -43,7 +47,7 @@ class SparepartController extends Controller
             'mobo' => 'required',
             'cpu' => 'required',
             'ram' => 'required',
-            'gpu' => 'required',
+            'gpu_id' => 'required',
             'hdd' => 'required_without:ssd',
             'ssd' => 'required_without:hdd',
             'psu' => 'required',
@@ -54,10 +58,11 @@ class SparepartController extends Controller
             'mobo'         => $request->mobo,
             'cpu'          => $request->cpu,
             'ram'          => $request->ram,
-            'gpu'          => $request->gpu,
+            'gpu_id'          => $request->gpu_id,
             'hdd'          => $request->hdd,
             'ssd'          => $request->ssd,
             'psu'          => $request->psu,
+            // dd($request)
         ]);
         return redirect()->route('pc.index');
     }
@@ -81,7 +86,7 @@ class SparepartController extends Controller
             'mobo' => 'required',
             'cpu' => 'required',
             'ram' => 'required',
-            'gpu' => 'required',
+            'gpu_id' => 'required',
             'hdd' => 'required_without:ssd',
             'ssd' => 'required_without:hdd',
             'psu' => 'required',
@@ -95,7 +100,7 @@ class SparepartController extends Controller
             'mobo'         => $request->mobo,
             'cpu'          => $request->cpu,
             'ram'          => $request->ram,
-            'gpu'          => $request->gpu,
+            'gpu_id'          => $request->gpu,
             'hdd'          => $request->hdd,
             'ssd'          => $request->ssd,
             'psu'          => $request->psu,

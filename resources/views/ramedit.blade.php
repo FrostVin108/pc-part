@@ -3,9 +3,9 @@
 @section('ramedit')
 <div style="margin-left: 50px; margin-right: 100px;">
 
-    <form method="POST" action="{{ route('ram.store') }}" class="create-position">
+    <form method="POST" action="{{ route('ram.update', $rams->id) }}" class="create-position">
         @csrf
-        @method('post')
+        @method('put')
         
             <div class="form-group">
                 <label for="exampleInputEmail">Masukan Banyak ram</label><br>

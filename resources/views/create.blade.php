@@ -28,9 +28,9 @@
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan Nama gpu</label><br>
             {{-- <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu"> --}}
-            <select name="gpu" class="form-control">
+            <select name="gpu_id" class="form-control">
                 @foreach ($gpus as $gpu )
-                    <option value="{{$gpu->gpu}}">{{$gpu->gpu}}</option> 
+                    <option value="{{$gpu->id}}">{{$gpu->gpu}}</option> 
                 @endforeach
             </select>
         </div>

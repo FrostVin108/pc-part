@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\hasOne;
+
 
 class sparepart extends Model
 {
@@ -14,10 +17,14 @@ class sparepart extends Model
         'mobo',
         'cpu',
         'ram',  
-        'gpu',
+        'gpu_id',
         'hdd',
         'ssd',
         'psu',
     ];
 
+    public function gpu(): BelongsTo
+    {
+        return $this->belongsTo(Gpu::class, 'gpu_id', 'id');
+    }
 }

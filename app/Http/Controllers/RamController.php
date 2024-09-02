@@ -57,7 +57,6 @@ class RamController extends Controller
         //validate form
         $this->validate($request, [
             'ram' => 'required',
-
         ]);
 
         //get post by ID

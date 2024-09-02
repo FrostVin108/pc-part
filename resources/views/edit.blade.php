@@ -12,7 +12,7 @@
     </div>
     @error('mobo')
     <div class="alert alert-danger mt-2">
-        Invalid, Input tidak terisi!
+        {{ $message }}
     </div>
     @enderror
 
@@ -22,7 +22,7 @@
     </div>
     @error('cpu')
     <div class="alert alert-danger mt-2">
-        Invalid, Input tidak terisi!
+        {{ $message }}
     </div>
     @enderror
 
@@ -38,7 +38,7 @@
     </div>
     @error('ram_id')
     <div class="alert alert-danger mt-2">
-        Invalid, Input tidak terisi!
+        {{ $message }}
     </div>
     @enderror
     
@@ -54,7 +54,7 @@
     </div>
     @error('gpu_id')
     <div class="alert alert-danger mt-2">
-        Invalid, Input tidak terisi!
+        {{ $message }}
     </div>
     @enderror
     
@@ -74,7 +74,7 @@
     </div>
     @error('psu')
     <div class="alert alert-danger mt-2">
-        Invalid, Input tidak terisi!
+        {{ $message }}
     </div>
     @enderror
 

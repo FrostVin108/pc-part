@@ -11,7 +11,7 @@
         </div>
         @error('mobo')
         <div class="alert alert-danger mt-2">
-            Invalid, Input tidak terisi!
+            {{ $message }}
         </div>
         @enderror
 
@@ -21,37 +21,39 @@
         </div>
         @error('cpu')
         <div class="alert alert-danger mt-2">
-            Invalid, Input tidak terisi!
+            {{ $message }}
         </div>
         @enderror
 
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
             {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram"> --}}
-            <select name="ram_id" class="form-control @error('ram') is-invalid @enderror">
+            <select name="ram_id" class="form-control @error('ram_id') is-invalid @enderror">
+                <option value="">pilih ram</option> 
                 @foreach ($rams as $ram )
                     <option value="{{$ram->id}}">{{$ram->ram}}</option> 
                 @endforeach
             </select>
         </div>
-        @error('ram')
+        @error('ram_id')
         <div class="alert alert-danger mt-2">
-            Invalid, Input tidak terisi!
+            {{ $message }}
         </div>
         @enderror
         
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan Nama gpu</label><br>
-            {{-- <input class="form-control" type="text" placeholder="Masukkan Gpu" name="gpu"> --}}
-            <select name="gpu_id" class="form-control @error('gpu') is-invalid @enderror">
+            {{-- <input class="form-control " type="text" placeholder="Masukkan Gpu" name="gpu_id"> --}}
+            <select name="gpu_id" class="form-control @error('gpu_id') is-invalid @enderror">
+                <option value="">pilih Gpu</option> 
                 @foreach ($gpus as $gpu )
                     <option value="{{$gpu->id}}">{{$gpu->gpu}}</option> 
                 @endforeach
             </select>
         </div>
-        @error('gpu')
+        @error('gpu_id')
         <div class="alert alert-danger mt-2">
-            Invalid, Input tidak terisi!
+            {{ $message }}
         </div>
         @enderror
         
@@ -71,7 +73,7 @@
         </div>
         @error('psu')
         <div class="alert alert-danger mt-2">
-            Invalid, Input tidak terisi!
+            {{ $message }}
         </div>
         @enderror
         

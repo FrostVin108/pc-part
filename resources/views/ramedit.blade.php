@@ -13,7 +13,7 @@
             </div>
             @error('ram')
             <div class="alert alert-danger mt-2">
-                Invalid, Input tidak terisi!
+                {{ $message }}
             </div>
             @enderror
 

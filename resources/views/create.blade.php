@@ -27,10 +27,10 @@
 
         <div class="form-group">
             <label for="exampleInputEmail">Masukkan banyak Ram </label><br>
-            {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram"> --}}
-            <select name="ram_id" class="form-control @error('ram_id') is-invalid @enderror">
+             {{-- <input class="form-control" type="text" placeholder="Masukkan Ram" name="ram">  --}}
+            <select name="ram_id" class="form-control @error('ram_id') is-invalid @enderror" aria-placeholder="text">
                 <option value="">pilih ram</option> 
-                @foreach ($rams as $ram )
+                @foreach ($rams as $ram)
                     <option value="{{$ram->id}}">{{$ram->ram}}</option> 
                 @endforeach
             </select>

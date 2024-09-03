@@ -47,6 +47,13 @@ class SparepartController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+
+        $messages = [
+            'mobo' => ':attribute di isi dulu sebelum kirim',
+            'cpu'    => ':attribute tidak ada isi',
+        ];
+        
+
         $request->validate([
             'mobo' => 'required',
             'cpu' => 'required',
@@ -55,7 +62,7 @@ class SparepartController extends Controller
             'hdd' => 'required_without:ssd',
             'ssd' => 'required_without:hdd',
             'psu' => 'required',
-        ]);
+        ], $messages);
 
         // if()
 
